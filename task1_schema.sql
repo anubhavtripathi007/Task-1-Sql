@@ -1,11 +1,4 @@
-
--- ========================================================
--- Task 1: Database Setup and Schema Design (E-commerce Domain)
--- File: task1_schema.sql
--- Database: ecommerce_db
--- ========================================================
-
--- Use/create database
+--create database
 CREATE DATABASE IF NOT EXISTS ecommerce_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE ecommerce_db;
 
@@ -106,14 +99,3 @@ CREATE TABLE reviews (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (product_id) REFERENCES products(product_id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- ========================================================
--- Notes:
--- - INT AUTO_INCREMENT demonstrates surrogate keys.
--- - DEFAULT and NOT NULL constraints used where appropriate.
--- - ON DELETE behaviors chosen to maintain referential integrity:
---    * users -> addresses cascading (delete user, addresses removed)
---    * products -> order_items restricted (product cannot be deleted if ordered)
---    * categories set to NULL on delete
--- - Order_items uses a composite primary key (order_id, product_id).
--- ========================================================
