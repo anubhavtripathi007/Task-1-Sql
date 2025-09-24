@@ -33,14 +33,4 @@ Create a well-structured database schema for a simple e-commerce system, demonst
   - Delete an order -> delete related order_items/payments.
   - Delete a category -> set product.category_id to NULL (keeps products discoverable).
 
-## Next steps (Task 2 mapping)
-For Task 2 (DML / Null handling), you can perform:
-- Insert sample users, products, categories (some fields NULL or using DEFAULT).
-- Update stock_qty after an order is placed.
-- Delete a canceled order and demonstrate `ROLLBACK` in a transaction.
-- Insert partial rows (e.g., address without address_line2) to show NULL handling.
-- Show `INSERT INTO ... SELECT ...` by copying product rows for testing.
 
-
-
----
